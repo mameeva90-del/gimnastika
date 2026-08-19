@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#16686a" />
+    <title>Гимнастика - мой прогресс</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">МОЯ НЕДЕЛЯ ДВИЖЕНИЯ</p>
+          <h1>Гимнастика для офиса</h1>
+          <p class="intro">Три короткие разминки в день. Отмечайте выполненное - прогресс сохранится на этом устройстве.</p>
+        </div>
+        <div class="week-progress" aria-label="Прогресс за неделю">
+          <span class="progress-label">Неделя</span>
+          <strong id="week-count">0 из 15</strong>
+          <div class="progress-track"><span id="week-bar"></span></div>
+          <span id="week-percent">0%</span>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="Управление прогрессом">
+        <p id="encouragement" aria-live="polite">Начните с первой короткой разминки.</p>
+        <button id="reset-button" class="reset-button" type="button">Начать неделю заново</button>
+      </section>
+
+      <section id="schedule" class="schedule" aria-label="График упражнений"></section>
+
+      <section class="note">
+        <h2>Важно</h2>
+        <ul>
+          <li>Двигайтесь плавно, в комфортной амплитуде, и не задерживайте дыхание.</li>
+          <li>Остановитесь при боли, головокружении или онемении.</li>
+          <li>При травмах или хронических заболеваниях согласуйте программу с врачом или физиотерапевтом.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

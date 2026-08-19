@@ -1,0 +1,63 @@
+:root {
+  --ink: #173f5f;
+  --muted: #547080;
+  --paper: #fbfdfd;
+  --teal: #197b7e;
+  --teal-dark: #0e6064;
+  --mint: #e2f3ef;
+  --line: #cce2df;
+  --warm: #f7b267;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 10% 0%, #e8f5f1 0, transparent 29rem), #f4f8f7;
+}
+.page-shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 64px; }
+.hero { display: flex; gap: 40px; justify-content: space-between; align-items: end; margin-bottom: 26px; }
+.eyebrow { color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .12em; margin: 0 0 8px; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: .98; letter-spacing: -.045em; }
+.intro { max-width: 620px; margin: 15px 0 0; font-size: 1.05rem; line-height: 1.55; color: var(--muted); }
+.week-progress { min-width: 210px; padding: 16px 18px; border-radius: 16px; background: var(--ink); color: white; box-shadow: 0 12px 24px #173f5f22; }
+.progress-label { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; opacity: .75; }
+.week-progress strong { display: block; margin: 2px 0 10px; font-size: 1.35rem; }
+.progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: #ffffff44; }
+.progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--warm); transition: width .25s ease; }
+#week-percent { display: block; text-align: right; font-size: .8rem; margin-top: 6px; opacity: .85; }
+.controls { display: flex; gap: 18px; align-items: center; justify-content: space-between; padding: 13px 18px; margin-bottom: 22px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.controls p { margin: 0; color: var(--muted); }
+button { font: inherit; cursor: pointer; }
+.reset-button { flex: 0 0 auto; padding: 8px 12px; border: 1px solid #b6cdca; border-radius: 8px; background: white; color: var(--teal-dark); font-weight: 700; }
+.reset-button:hover { background: var(--mint); }
+.schedule { display: grid; gap: 14px; }
+.day-card { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 4px 12px #173f5f0b; }
+.day-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; background: var(--mint); }
+.day-header h2 { margin: 0; font-size: 1.15rem; }
+.day-total { color: var(--teal-dark); font-size: .88rem; font-weight: 750; }
+.sessions { display: grid; grid-template-columns: repeat(3, 1fr); }
+.session { padding: 17px 18px 18px; border-left: 1px solid var(--line); }
+.session:first-child { border-left: 0; }
+.session-label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.check { position: absolute; opacity: 0; pointer-events: none; }
+.box { flex: 0 0 23px; width: 23px; height: 23px; display: grid; place-items: center; border: 2px solid #9ab9b5; border-radius: 7px; color: transparent; transition: all .18s ease; }
+.check:checked + .box { border-color: var(--teal); background: var(--teal); color: white; }
+.check:focus-visible + .box { outline: 3px solid #f7b26799; outline-offset: 2px; }
+.time { display: block; color: var(--teal-dark); font-size: .78rem; font-weight: 850; letter-spacing: .07em; }
+.focus { display: block; margin-top: 2px; font-size: 1rem; font-weight: 800; }
+.exercise { margin: 12px 0 0 33px; color: #405a6a; font-size: .93rem; line-height: 1.45; }
+.session.done { background: #f0faf7; }
+.note { margin-top: 30px; padding: 21px 24px; border-left: 5px solid var(--warm); border-radius: 0 12px 12px 0; background: #fff9f1; }
+.note h2 { margin: 0 0 8px; font-size: 1rem; }
+.note ul { padding-left: 19px; margin: 0; color: #51626d; line-height: 1.65; }
+@media (max-width: 760px) {
+  .page-shell { width: min(100% - 24px, 1120px); padding-top: 28px; }
+  .hero, .controls { align-items: stretch; flex-direction: column; gap: 16px; }
+  .week-progress { min-width: 0; }
+  .sessions { grid-template-columns: 1fr; }
+  .session { border-top: 1px solid var(--line); border-left: 0; }
+  .session:first-child { border-top: 0; }
+}
